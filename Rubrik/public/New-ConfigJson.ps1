@@ -13,6 +13,8 @@ function New-ConfigJson {
         [parameter(Mandatory)]
             [string] $TestNetwork,
         [parameter(Mandatory)]
+            [string] $TestSubnet,
+        [parameter(Mandatory)]
             [ipaddress] $TestGateway,
         [parameter(Mandatory)]
             [string[]] $Tasks
