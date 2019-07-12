@@ -17,7 +17,7 @@ function New-SecureCredential {
     } 
 
     switch (Get-PowerShellVersion) {
-        'Windows' {
+        { 'Windows' -or 'macOS' } {
             if (-not (Test-FolderStructure -Credential)) {
                 $null = New-Item -Path './credential' -ItemType Directory
             }
@@ -26,9 +26,6 @@ function New-SecureCredential {
                 $Credential = (Get-Item variable:$_).Value
                 $Credential | Export-Clixml -Path $(Join-Path $Path "$_.xml")
             }
-        }
-        'macOS' {
-
         }
         default {Write-Error 'Current OS platform not supported '}
     }
