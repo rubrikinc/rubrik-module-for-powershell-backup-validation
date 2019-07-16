@@ -32,6 +32,7 @@ function New-ConfigJson {
         testSubnet = $TestSubnet
         testGateway = $TestGateway.ToString()
         tasks = $Tasks
+        guestCred = $GuestCred
     }}
         
     $CurrentConfig |
