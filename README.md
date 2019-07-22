@@ -2,7 +2,7 @@
 
 This project is used to provide a framework for serial and parallel application testing against workloads that have been protected by Rubrik's Cloud Data Management platform.
 
-This is a complement to the [Use Case: Powershell Backup Validation](https://github.com/rubrikinc/use-case-powershell-backup-validation). This project makes the use case scripts modular.
+This is a complement to the [Use Case: Powershell Backup Validation](https://github.com/rubrikinc/use-case-powershell-backup-validation). This project makes the use case scripts modular, and provides a single function that can generate the complete configuration script.
 
 # :blue_book: Documentation 
 
