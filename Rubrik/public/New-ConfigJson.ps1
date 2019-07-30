@@ -24,10 +24,17 @@ function New-ConfigJson {
         $null = New-Item -Path './config' -ItemType Directory
     }
 
-    $CurrentConfig = [pscustomobject]$MyInvocation.BoundParameters
-    $CurrentConfig.TestIp = $CurrentConfig.TestIp.ToString()
-    $CurrentConfig.TestGateway = $CurrentConfig.TestGateway.ToString()
-    
+    $CurrentConfig = [pscustomobject]@{"virtualMachines" = ,@{
+        name = $Name
+        mountName = $MountName
+        testIp = $TestIp.ToString()
+        testNetwork = $TestNetwork
+        testSubnet = $TestSubnet
+        testGateway = $TestGateway.ToString()
+        tasks = $Tasks
+        guestCred = $GuestCred
+    }}
+        
     $CurrentConfig |
     ConvertTo-Json -Depth 3 | 
     Set-Content -Path (Join-Path './config' $ConfigFilePath)
